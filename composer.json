@@ -1,0 +1,13 @@
+{
+	"name": "frangeris/skeleton-provider",
+	"description": "Skeleton for providers using SDK following RESTful standar",
+	"autoload": {
+		"classmap": [
+			"src/"
+		]
+	},
+    "require": {
+        "php": ">=5.5.5",
+		"frangeris/skeleton-sdk": "v0.0.1"
+    }
+}
