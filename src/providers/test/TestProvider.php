@@ -12,7 +12,12 @@ use Skeleton\SDK\Providers\AbstractProvider,
 class TestProvider extends AbstractProvider implements ISupplier
 {
 	public function create($provider)
-	{}
+	{
+		if (!is_array($provider))
+			$provider = $this->skeleton->fragmen($provider);
+
+		return $this->skeleton->post('/users', $provider);
+	}
 
 	public function read()
 	{}

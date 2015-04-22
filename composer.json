@@ -4,7 +4,10 @@
 	"autoload": {
 		"classmap": [
 			"src/"
-		]
+		],		
+		"psr-4": {
+			"Providers\\": "src/providers/"
+		}
 	},
     "require": {
         "php": ">=5.5.5",
