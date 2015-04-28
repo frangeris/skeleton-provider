@@ -6,11 +6,12 @@
 			"src/"
 		],		
 		"psr-4": {
-			"Providers\\": "src/providers/"
+			"Provider\\": "src/"
 		}
 	},
     "require": {
         "php": ">=5.5.5",
-		"frangeris/skeleton-sdk": "v0.0.1"
+		"frangeris/skeleton-sdk": "v0.0.1",
+		"symfony/console": "2.6.6"
     }
 }

@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+// set to run indefinitely if needed
+set_time_limit(0);
+
+// include the composer autoloader
+require __DIR__.'/vendor/autoload.php';
+
+// import the Symfony Console Application 
+use Symfony\Component\Console\Application; 
+
+$app = new Application('CLI tool for skeleton provider', '0.0.1');
+
+// List of commands available
+$app->addCommands([
+    new Provider\Commands\GenerateCommand(),
+]);
+
+// Run the app
+$app->run();
+?>
