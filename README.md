@@ -21,7 +21,7 @@ Features to be taken into consideration to define the logic of work:
 The best way to start a clean project is to delegate this task to composer, just run the following:
 
 ```sh
-$ composer create-project frangeris/skeleton-provider /path/to/install/ 0.0.1
+$ composer create-project frangeris/skeleton-provider /path/to/install/ 0.0.2
 ```
 
 After this, a clean folder has been created (now a folder without repo), initialize your repository and haste charge... all dependencies have been installed, if you are at this point, you can already start creating your respective providers to consume your RESTful api.
@@ -57,7 +57,7 @@ $config = [
 ```
 Where `method` is the signature to use for authenticate if is "hmac" then public & private key are required, the base url for creating the path to request. This is the configuration that the skeleton-sdk customer uses to make consequential request.
 
-4) Lets start coding
+**4) Lets start coding**
 
 Each provider must extend the abstract class `Skeleton\SDK\Providers\AbstractProvider` belonging to the skeleton-sdk package(we are extending an sdk) and implement `Skeleton\SDK\Common\Supplier\ISupplier` interface to overwrite inherited methods (CRUD) leaving your provider like this:
 
@@ -94,6 +94,17 @@ class TestProvider extends AbstractProvider implements ISupplier
 
 In this class of example, show the basic operations of a resource through an api, if carefully note some methods require a parameter to run, we will start sending values and customize our provider..
 
+Inside the package, there is a tool for create providers with all the default structure(enum, exceptions) and folders, from / run:
+
+```sh
+$ ./skeleton
+```
+
+And it'll show a list of available commads, for create new provider use:
+
+```sh
+$ ./skeleton provider:new
+```
 
 ***create($provider)***
 
@@ -187,16 +198,3 @@ Transfer-Encoding: chunked
 ```
 
 Onsite returned by the post skeleton instance method object is of type [GuzzleHttp\Message\Response](http://api.guzzlephp.org/class-Guzzle.Http.Message.Response.html) providing all native methods for manejor guzzle response: D
-
-
-
-
-
-
-
-
-
-
-
-
-
