@@ -4,7 +4,7 @@
 	"autoload": {
 		"classmap": [
 			"src/"
-		],		
+		],
 		"psr-4": {
 			"Provider\\": "src/"
 		}

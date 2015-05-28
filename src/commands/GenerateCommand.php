@@ -1,10 +1,10 @@
 <?php namespace Provider\Commands;
- 
+
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
- 
+
 class GenerateCommand extends Command
 {
     protected function configure()
@@ -14,7 +14,7 @@ class GenerateCommand extends Command
             ->setDescription('Scaffolding for generate a provider class')
         ;
     }
- 
+
     /**
      * @param \Symfony\Component\Console\Input\InputInterface $input
      * @param \Symfony\Component\Console\Output\OutputInterface $output
@@ -25,7 +25,7 @@ class GenerateCommand extends Command
         $fn = function ($func) {
             return $func;
         };
-        
+
         $helper = $this->getHelper('question');
         $question = new Question("Insert the name for new provider: ");
         $answer = $helper->ask($input, $output, $question);
@@ -43,12 +43,12 @@ use Skeleton\SDK\Providers\AbstractProvider;
 
 /**
  * Provider for resource /{$fn(strtolower($answer))}
- */            
+ */
 class {$fn(ucfirst($answer))}Provider extends AbstractProvider implements ISupplier
 {
     /**
      * Create new resource
-     * 
+     *
      * @param object|array $entity New resource data to create
      * @return GuzzleHttp\Message\Response Response from guzzle
      */
@@ -59,7 +59,7 @@ class {$fn(ucfirst($answer))}Provider extends AbstractProvider implements ISuppl
 
     /**
      * Get all from resource
-     * 
+     *
      * @return GuzzleHttp\Message\Response Response from guzzle
      */
     public function read()
@@ -99,7 +99,7 @@ class {$fn(ucfirst($answer))}Provider extends AbstractProvider implements ISuppl
     public function getById(\$id)
     {
         return \$this->skeleton->get('/{$fn(strtolower($answer))}/'.\$id);
-    }    
+    }
 }
 EOF;
 		// Determinate the directory
@@ -123,7 +123,7 @@ EOF;
 
         // Create the file .php
         $fp = fopen($file, 'w');
-        fwrite($fp, $classCode); 
+        fwrite($fp, $classCode);
         fclose($fp);
 
 		// success
@@ -131,6 +131,6 @@ EOF;
 
         } else {
             return;
-        }        
+        }
     }
 }
