@@ -11,7 +11,7 @@
 	},
     "require": {
         "php": ">=5.5.5",
-		"frangeris/skeleton-sdk": "v0.0.1",
-		"symfony/console": "2.6.6"
+		"frangeris/skeleton-sdk": "v0.0.3",
+		"symfony/console": "2.6.*"
     }
 }

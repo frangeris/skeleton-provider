@@ -21,7 +21,7 @@ Features to be taken into consideration to define the logic of work:
 The best way to start a clean project is to delegate this task to composer, just run the following:
 
 ```sh
-$ composer create-project frangeris/skeleton-provider /path/to/install/ 0.0.2
+$ composer create-project frangeris/skeleton-provider /path/to/install/ 0.0.3
 ```
 
 After this, a clean folder has been created (now a folder without repo), initialize your repository and haste charge... all dependencies have been installed, if you are at this point, you can already start creating your respective providers to consume your RESTful api.
@@ -36,7 +36,7 @@ Default configuration(autoload inside composer.json):
 "autoload": {
 	"classmap": [
 		"src/"
-	],		
+	],
 	"psr-4": {
 		"Providers\\": "src/providers/"
 	}
@@ -145,7 +145,7 @@ print $test->create($data);
 The `TestProvider` class contains a property inherited from `AbstractProvider` called skeleton, this property allows the request through guzzle, is a broker for each call using the signatures provided in settings travez of skeleton-sdk, methods available (signature) are:
 
  1. **Hmac(public & private) key**
- 2. Oauth2 (todo) 
+ 2. Oauth2 (todo)
  3. ...
 
 The configuration is composed of two main parts: the method to be used for authentication and base_url parameter containing the url base to form the request.
@@ -165,7 +165,7 @@ class TestProvider extends AbstractProvider implements ISupplier
 		if (!is_array($provider))
 			$provider = $this->skeleton->fragment($provider);
 
-		return $this->skeleton->post('/users', $provider);
+		return $this->skeleton->post('/tests', $provider);
 	}
 
 	// ...
@@ -193,7 +193,7 @@ Accept-Ranges: none
 Transfer-Encoding: chunked
 
 {
-	"msg":"user created successfully"
+	"msg": "response from test method v1 using POST"
 }
 ```
 
