@@ -21,7 +21,7 @@ Features to be taken into consideration to define the logic of work:
 The best way to start a clean project is to delegate this task to composer, just run the following:
 
 ```sh
-$ composer create-project frangeris/skeleton-provider /path/to/install/ 0.0.3
+$ composer create-project frangeris/skeleton-provider /path/to/install/ 0.0.5
 ```
 
 After this, a clean folder has been created (now a folder without repo), initialize your repository and haste charge... all dependencies have been installed, if you are at this point, you can already start creating your respective providers to consume your RESTful api.
