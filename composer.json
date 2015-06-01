@@ -10,8 +10,8 @@
 		}
 	},
     "require": {
-        "php": ">=5.5.5",
-		"frangeris/skeleton-sdk": "v0.0.3",
+        "php": ">=5.5.0",
+		"frangeris/skeleton-sdk": "v1.0.0",
 		"symfony/console": "2.6.*"
     }
 }
